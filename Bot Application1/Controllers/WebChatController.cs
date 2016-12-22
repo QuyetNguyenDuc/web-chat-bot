@@ -15,7 +15,6 @@ namespace Bot_Application1
         public async Task<HttpResponseMessage> Get()
         {
             string webChatSecret = ConfigurationManager.AppSettings["WebChatSecret"];
-            Console.WriteLine("Secret:" + webChatSecret);
             string result = await GetIFrameWithTokenAsync(webChatSecret);
 
             //string result = await GetIFrameViaPostWithToken(webChatSecret);
@@ -25,14 +24,15 @@ namespace Bot_Application1
             return response;
         }
 
-        string GetIFrameWithSecret(string webChatSecret)
+       /* string GetIFrameWithSecret(string webChatSecret)
         {
             // This technique is insecure because you're exposing your secret in the Web page
             return $"<iframe width='400px' height='400px' src='https://webchat.botframework.com/embed/thew123456q?s={webChatSecret}'></iframe>";
-        }
+        }*/
 
         async Task<string> GetIFrameWithTokenAsync(string webChatSecret)
         {
+            /*
             var request = new HttpRequestMessage(HttpMethod.Get, "https://webchat.botframework.com/api/tokens");
             request.Headers.Add("Authorization", "BOTCONNECTOR " + webChatSecret);
 
@@ -40,10 +40,11 @@ namespace Bot_Application1
             string token = await response.Content.ReadAsStringAsync();
             token = token.Replace("\"", "");
 
-            //  return $"<iframe width='400px' height='400px' src='https://webchat.botframework.com/embed/thew123456q?t={token}'></iframe>";
+            return $"<iframe width='400px' height='400px' src='https://webchat.botframework.com/embed/thew123456q?t={token}'></iframe>";
+            */
             return $"<iframe width='400px' height='400px' src='https://webchat.botframework.com/embed/thew123456q?s={webChatSecret}'></iframe>";
         }
 
-       
+   
     }
 }
