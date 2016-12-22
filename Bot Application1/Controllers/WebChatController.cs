@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace PigLatinBot
+namespace Bot_Application1
 {
     public class WebChatController : ApiController
     {
