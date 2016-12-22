@@ -15,7 +15,7 @@ namespace Bot_Application1
         public async Task<HttpResponseMessage> Get()
         {
             string webChatSecret = ConfigurationManager.AppSettings["WebChatSecret"];
-
+            Console.WriteLine("Secret:" + webChatSecret);
             string result = await GetIFrameWithTokenAsync(webChatSecret);
 
             //string result = await GetIFrameViaPostWithToken(webChatSecret);
