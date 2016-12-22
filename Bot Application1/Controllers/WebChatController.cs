@@ -42,7 +42,7 @@ namespace Bot_Application1
 
             return $"<iframe width='400px' height='400px' src='https://webchat.botframework.com/embed/thew123456q?t={token}'></iframe>";
             */
-            return $"<iframe width='400px' height='400px' src='https://webchat.botframework.com/embed/thew123456q?s={webChatSecret}'></iframe>";
+            return $"<iframe width='400px' height='400px' src='https://webchat.botframework.com/embed/thew123456q?s=xbWea89xvVM.cwA.SdI.98vbXp_sDYExpWmkUhH2hd3Nu8F0qXaPYLhr3alk3PY'></iframe>";
         }
 
    
