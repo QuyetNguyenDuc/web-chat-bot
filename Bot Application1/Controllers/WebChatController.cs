@@ -7,7 +7,8 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Http;
-
+using MongoDB.Driver;
+using MongoDB.Bson;
 namespace Bot_Application1
 {
     public class WebChatController : ApiController
@@ -21,6 +22,19 @@ namespace Bot_Application1
 
             HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK);
             response.Content = new StringContent(result, Encoding.UTF8, "text/html");
+            //
+            /*var connectionString = "mongodb://localhost";
+            var client = new MongoClient(connectionString);
+            var server = client.GetServer();
+            server.Ping();*/
+            MongoSever mongo = MongoServer.Create();
+            mongo.Connect();
+            Console.WriteLine("Connected");
+            Console.WriteLine();
+            var db = mongo.GetDatabase("tutorial");
+            Console.WriteLine();
+            Console.Read();
+            //
             return response;
         }
 

@@ -18,6 +18,7 @@ namespace Bot_Application1
         /// Receive a message from a user and reply to it
         /// </summary>
         /// 
+        
 
   
         public async Task<HttpResponseMessage> Post([FromBody]Activity activity)
@@ -27,7 +28,7 @@ namespace Bot_Application1
                 ConnectorClient connector = new ConnectorClient(new Uri(activity.ServiceUrl));
                 // calculate something for us to return
                 int length = (activity.Text ?? string.Empty).Length;
-
+                
                 // return our reply to the user
                 Activity reply = activity.CreateReply($"You sent {activity.Text} which was {length} characters");
                 await connector.Conversations.ReplyToActivityAsync(reply);
